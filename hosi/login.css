@@ -269,3 +269,18 @@ select,.input-box input{font-size:16px}
 .login-box{width:100%;padding:25px 20px}
 .hospital-logo i{font-size:48px}
 }
+
+
+/* ===== DECORATION ===== */
+body{background:radial-gradient(circle at 15% 20%,rgba(125,211,252,.35),transparent 40%),radial-gradient(circle at 85% 80%,rgba(255,255,255,.18),transparent 35%),linear-gradient(135deg,#064e6e,#0284c7 60%,#38bdf8)}
+.login-box{border-top:6px solid #0ea5e9;box-shadow:0 25px 60px rgba(0,0,0,.3)}
+.hospital-logo i{display:inline-flex;align-items:center;justify-content:center;width:90px;height:90px;border-radius:50%;background:#e0f2fe;font-size:44px}
+.hospital-logo h2{font-size:24px}
+.input-box{background:#f8fafc;transition:.3s}
+.input-box:focus-within{border-color:#0ea5e9;background:white;box-shadow:0 0 0 3px rgba(14,165,233,.2)}
+select{background:#f8fafc}
+select:focus{border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.2)}
+button{background:linear-gradient(90deg,#075985,#0284c7);box-shadow:0 8px 18px rgba(2,132,199,.35)}
+button:hover{background:linear-gradient(90deg,#0284c7,#0ea5e9)}
+p button{background:none;color:#0284c7;box-shadow:none;width:auto;padding:0 4px;font-size:15px;font-weight:bold;text-decoration:underline}
+p button:hover{background:none;transform:none;color:#075985}

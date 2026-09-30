@@ -557,3 +557,28 @@ MOBILE
 .appointments{padding:15px;margin-top:20px}
 .appointments table{min-width:520px;font-size:14px}
 }
+
+
+/* ===== DECORATION ===== */
+body{background:linear-gradient(160deg,#e8f4fb,#f8fbfd 60%,#e3f1f8);background-attachment:fixed}
+.sidebar{box-shadow:4px 0 20px rgba(0,78,100,.25)}
+.logo i{background:rgba(255,255,255,.15);padding:10px;border-radius:12px;font-size:26px}
+.sidebar ul li a:hover,.sidebar ul li.active a{box-shadow:0 6px 14px rgba(0,0,0,.15);font-weight:600}
+.sidebar ul li{cursor:pointer}
+.topbar{border-left:6px solid #087ea4;box-shadow:0 8px 20px rgba(0,78,100,.10)}
+.topbar a{transition:.3s}
+.card{border-top:4px solid #087ea4;box-shadow:0 10px 25px rgba(0,78,100,.10)}
+.card:hover{box-shadow:0 18px 35px rgba(0,78,100,.18)}
+.card i{display:inline-flex;align-items:center;justify-content:center;width:70px;height:70px;border-radius:50%;background:#e0f5fb;font-size:30px}
+.cards .card:nth-child(2){border-top-color:#10b981}.cards .card:nth-child(2) i{background:#d1fae5;color:#059669}
+.cards .card:nth-child(3){border-top-color:#f59e0b}.cards .card:nth-child(3) i{background:#fef3c7;color:#d97706}
+.appointments{border:1px solid #dcecf4}
+.appointments h2{padding-bottom:12px;border-bottom:2px solid #e0f5fb}
+.appointments th{background:linear-gradient(90deg,#004e64,#087ea4);color:white;padding:14px 8px}
+.appointments tbody tr:nth-child(even){background:#f6fbfd}
+.appointments tbody tr:hover{background:#e0f5fb}
+@media(max-width:900px){
+.sidebar{box-shadow:0 -4px 15px rgba(0,78,100,.3);background:linear-gradient(90deg,#004e64,#087ea4)}
+.sidebar ul li a:hover,.sidebar ul li.active a{box-shadow:none;background:rgba(255,255,255,.2);color:white}
+.card i{width:52px;height:52px;font-size:22px}
+}

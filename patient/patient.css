@@ -1,9 +1,15 @@
+/* =====================================
+   AGNES MEMORIAL MEDICAL HOSPITAL
+   LOGIN PAGE CSS
+===================================== */
+
+
 *{
 
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:'Segoe UI',sans-serif;
 
 }
 
@@ -15,55 +21,194 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:#e0f2fe;
+background:linear-gradient(
+135deg,
+#075985,
+#0ea5e9
+);
 
 }
 
 
 
-.patient-card{
+/* LOGIN CONTAINER */
+
+
+.login-container{
+
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+
+
+
+/* LOGIN BOX */
+
+
+.login-box{
 
 background:white;
 width:380px;
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
-text-align:center;
+padding:40px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.2);
+animation:slide .8s ease;
 
 }
 
 
 
-.patient-card h1{
+
+
+@keyframes slide{
+
+
+from{
+
+opacity:0;
+transform:translateY(-50px);
+
+}
+
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* LOGO */
+
+
+.hospital-logo{
+
+text-align:center;
+margin-bottom:30px;
+
+}
+
+
+
+.hospital-logo i{
+
+font-size:60px;
+color:#075985;
+
+}
+
+
+
+.hospital-logo h2{
 
 color:#075985;
+margin-top:10px;
+
+}
+
+
+
+.hospital-logo p{
+
+color:#777;
+
+}
+
+
+
+
+
+
+
+/* INPUTS */
+
+
+.input-box{
+
+display:flex;
+align-items:center;
+border:1px solid #ddd;
+border-radius:10px;
+padding:12px;
 margin-bottom:20px;
 
 }
 
 
 
-input{
+.input-box i{
 
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:8px;
-border:1px solid #ccc;
+color:#075985;
+margin-right:10px;
 
 }
 
 
 
-button{
+.input-box input{
+
+border:none;
+outline:none;
+width:100%;
+font-size:16px;
+
+}
+
+
+
+
+
+
+/* ROLE SELECT */
+
+
+select{
 
 width:100%;
-padding:12px;
+padding:13px;
+border-radius:10px;
+border:1px solid #ddd;
+margin-bottom:20px;
+font-size:15px;
+outline:none;
+
+}
+
+
+
+
+
+
+
+/* LOGIN BUTTON */
+
+
+button{
+
+
+width:100%;
+padding:14px;
+border:none;
+border-radius:25px;
 background:#075985;
 color:white;
-border:none;
-border-radius:8px;
+font-size:17px;
 cursor:pointer;
+transition:.3s;
+
 
 }
 
@@ -71,21 +216,71 @@ cursor:pointer;
 
 button:hover{
 
-background:#0284c7;
+
+background:#0ea5e9;
+transform:translateY(-3px);
+
 
 }
 
 
 
-a{
 
-color:#075985;
+
+
+/* MESSAGE */
+
+
+#message{
+
+text-align:center;
+margin-top:15px;
+font-weight:bold;
+
+}
+
+
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:450px){
+
+
+.login-box{
+
+width:90%;
+padding:30px;
+
+}
+
 
 }
 
 /* ===== MOBILE FIT ===== */
-body{min-height:100vh;height:auto;padding:15px}
-.patient-card{width:100%;max-width:380px;padding:25px 20px}
-.patient-card h1{font-size:22px}
-input,select,textarea{font-size:16px} /* stops iPhone auto-zoom */
-button{font-size:16px}
+body{height:auto;min-height:100vh;padding:15px}
+.login-box{width:100%;max-width:380px}
+select,.input-box input{font-size:16px}
+@media(max-width:450px){
+.login-box{width:100%;padding:25px 20px}
+.hospital-logo i{font-size:48px}
+}
+
+
+/* ===== DECORATION ===== */
+body{background:radial-gradient(circle at 15% 20%,rgba(125,211,252,.35),transparent 40%),radial-gradient(circle at 85% 80%,rgba(255,255,255,.18),transparent 35%),linear-gradient(135deg,#064e6e,#0284c7 60%,#38bdf8)}
+.login-box{border-top:6px solid #0ea5e9;box-shadow:0 25px 60px rgba(0,0,0,.3)}
+.hospital-logo i{display:inline-flex;align-items:center;justify-content:center;width:90px;height:90px;border-radius:50%;background:#e0f2fe;font-size:44px}
+.hospital-logo h2{font-size:24px}
+.input-box{background:#f8fafc;transition:.3s}
+.input-box:focus-within{border-color:#0ea5e9;background:white;box-shadow:0 0 0 3px rgba(14,165,233,.2)}
+select{background:#f8fafc}
+select:focus{border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.2)}
+button{background:linear-gradient(90deg,#075985,#0284c7);box-shadow:0 8px 18px rgba(2,132,199,.35)}
+button:hover{background:linear-gradient(90deg,#0284c7,#0ea5e9)}
+p button{background:none;color:#0284c7;box-shadow:none;width:auto;padding:0 4px;font-size:15px;font-weight:bold;text-decoration:underline}
+p button:hover{background:none;transform:none;color:#075985}

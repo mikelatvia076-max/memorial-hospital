@@ -659,3 +659,44 @@ th,td{padding:10px 8px;font-size:14px}
 @media(min-width:601px) and (max-width:900px){
 .appointments form{grid-template-columns:1fr 1fr}
 }
+
+
+/* ===== DECORATION ===== */
+body{background:linear-gradient(160deg,#eef6fc 0%,#f8fafc 60%,#e8f1f8 100%);background-attachment:fixed}
+.sidebar{background:linear-gradient(180deg,#064e6e 0%,#075985 50%,#0284c7 100%)}
+.logo{background:rgba(0,0,0,.18);letter-spacing:.5px}
+.logo i{color:#7dd3fc}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:3px solid #0ea5e9}
+.top-right input:focus{border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.2)}
+.top-right i{transition:.3s}
+.top-right i:hover{color:#0ea5e9;transform:scale(1.15)}
+.top-right img{border:3px solid #0ea5e9}
+
+.card{border-top:4px solid #0284c7;box-shadow:0 10px 25px rgba(7,89,133,.10)}
+.card:hover{box-shadow:0 18px 35px rgba(7,89,133,.18)}
+.card i{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#e0f2fe;font-size:28px}
+.cards .card:nth-child(2){border-top-color:#10b981}.cards .card:nth-child(2) i{background:#d1fae5;color:#059669}
+.cards .card:nth-child(3){border-top-color:#8b5cf6}.cards .card:nth-child(3) i{background:#ede9fe;color:#7c3aed}
+.cards .card:nth-child(4){border-top-color:#f59e0b}.cards .card:nth-child(4) i{background:#fef3c7;color:#d97706}
+
+.appointments{border:1px solid #e2eef7;box-shadow:0 10px 25px rgba(7,89,133,.08)}
+.appointments h2{padding-bottom:12px;border-bottom:2px solid #e0f2fe}
+.appointments h2 i{color:#0284c7;margin-right:8px}
+thead{background:linear-gradient(90deg,#075985,#0284c7)}
+th{font-weight:600;letter-spacing:.3px}
+tbody tr:nth-child(even){background:#f8fbfe}
+
+input:focus,select:focus,textarea:focus{outline:none;border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.2)}
+.appointments form button,#patientForm button{background:linear-gradient(90deg,#075985,#0284c7);color:white;border:none;border-radius:10px;padding:13px;font-size:16px;cursor:pointer;box-shadow:0 6px 14px rgba(2,132,199,.3);transition:.3s}
+.appointments form button:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(2,132,199,.4)}
+.hospital-notification span{box-shadow:0 0 0 3px white}
+
+@media(min-width:901px){
+.sidebar ul li a{margin:4px 12px;border-radius:10px;width:auto}
+.sidebar ul li:hover a,.sidebar ul li.active a{border-left:none;background:rgba(255,255,255,.18);box-shadow:inset 4px 0 0 #7dd3fc}
+}
+@media(max-width:900px){
+.sidebar{background:linear-gradient(90deg,#064e6e,#075985)}
+.sidebar ul li:hover a,.sidebar ul li.active a{background:rgba(255,255,255,.15)}
+.card i{width:48px;height:48px;font-size:20px}
+}

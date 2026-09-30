@@ -191,3 +191,117 @@ button:hover{
     }
 
 }
+
+/* ===== MOBILE FIT + DECORATION ===== */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;overflow-x:hidden}
+img{max-width:100%}
+
+/* wallpaper: always covers the screen, dark overlay keeps the text readable */
+#loginpage{
+    background-image:
+        linear-gradient(180deg,rgba(0,30,50,.75) 0%,rgba(0,30,50,.55) 45%,rgba(0,30,50,.85) 100%),
+        url(agneses_pdf.jpeg);
+    background-size:cover;
+    background-position:55% 25%;
+    background-repeat:no-repeat;
+    background-attachment:scroll;
+    background-color:#0b2a3a;
+    width:100%;
+    min-height:100vh;
+    min-height:100dvh;
+    padding:25px 20px 40px;
+    border-radius:0;
+    text-shadow:0 2px 6px rgba(0,0,0,.6);
+}
+#loginpage h1,#loginpage h2,#loginpage p{margin:10px 0}
+#loginpage h2{color:#7dd3fc}
+#loginpage p{font-size:18px}
+
+.shine-title{font-size:clamp(22px,6vw,40px);line-height:1.25;word-break:break-word;text-shadow:none}
+
+/* logo: keeps its real shape and never overlaps the text */
+#kasa{
+    display:block;
+    width:min(220px,55vw);
+    height:auto;
+    margin:15px auto;
+    position:static;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,.45);
+}
+
+/* portal buttons */
+.portal-button{
+    display:block;
+    width:100%;
+    max-width:340px;
+    margin:14px auto;
+    padding:16px 20px;
+    text-align:center;
+    font-size:17px;
+    border-radius:30px;
+    text-shadow:none;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+    transition:.3s;
+}
+.portal-button:hover{transform:translateY(-3px)}
+#loginpage br{display:none}   /* spacing now comes from margins */
+#loginpage .portal-button:first-of-type{margin-top:30px}
+
+button{max-width:100%}
+
+@media(min-width:800px){
+    #loginpage{padding:40px 60px 80px}
+    #kasa{position:absolute;left:20px;bottom:15px;margin:0;width:180px}
+    #loginpage{position:relative}
+}
+@media(max-width:480px){
+    #loginpage{padding:20px 14px 35px;border-width:2px}
+    #loginpage p{font-size:16px}
+}
+
+
+/* ===== BEAUTIFUL APPEARANCE ===== */
+#loginpage{animation:none;border:none;box-shadow:inset 0 0 0 3px rgba(125,211,252,.55)}
+#loginpage>*{animation:fadeUp .8s ease both}
+#loginpage>*:nth-child(2){animation-delay:.1s}
+#loginpage>*:nth-child(3){animation-delay:.2s}
+#loginpage>*:nth-child(4){animation-delay:.3s}
+#loginpage>*:nth-child(5){animation-delay:.4s}
+#loginpage>*:nth-child(6){animation-delay:.5s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+
+.shine-title{letter-spacing:1px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.6))}
+#kasa{animation:float 4s ease-in-out infinite,fadeUp .8s ease both}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* glass cards for mission and motto */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;max-width:700px;margin:25px auto}
+.glass-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:22px 18px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.35);transition:.3s}
+.glass-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.18)}
+.glass-card i{font-size:30px;color:#7dd3fc;margin-bottom:8px}
+.glass-card h2{margin:6px 0;color:white}
+.glass-card p{margin:0;color:#e0f2fe}
+
+/* portal buttons */
+.portal-buttons{margin:30px auto 10px}
+.portal-button{color:white;border:2px solid rgba(255,255,255,.6);animation:none;text-decoration:none}
+.portal-button i{margin-right:8px}
+.portal-button.staff{background:linear-gradient(90deg,#075985,#0ea5e9)}
+.portal-button.patient{background:linear-gradient(90deg,#0f766e,#10b981)}
+.portal-button:hover{box-shadow:0 0 25px rgba(125,211,252,.8);color:white}
+
+/* feature icons */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;max-width:760px;margin:35px auto 10px}
+.feature{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:16px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:14px;transition:.3s}
+.feature i{font-size:26px;color:#5eead4}
+.feature:hover{background:rgba(255,255,255,.15);transform:translateY(-4px)}
+
+/* heartbeat + footer */
+.heartbeat{margin-top:30px;font-size:34px;color:#fb7185}
+.heartbeat i{animation:beat 1.3s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.3)}30%{transform:scale(1)}45%{transform:scale(1.2)}}
+.site-footer{font-size:13px !important;color:#bae6fd;margin-top:8px}
+
+@media(prefers-reduced-motion:reduce){#loginpage>*,#kasa,.heartbeat i{animation:none}}
