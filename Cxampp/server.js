@@ -27,6 +27,23 @@ app.use(express.json());
 // while keeping server.js, database.js, .env, .sql files etc. private.
 // ================================
 
+// Finds the folder that holds the website (index.html, hosi, patient ...).
+// Works whether those are next to server.js or one folder above it.
+function findSiteRoot() {
+    const candidates = [__dirname, path.join(__dirname, "..")];
+    for (const dir of candidates) {
+        try {
+            const names = fs.readdirSync(dir).map(n => n.toLowerCase());
+            if (names.includes("hosi") || names.includes("patient") || names.includes("index.html")) return dir;
+        } catch (e) {}
+    }
+    return __dirname;
+}
+
+const SITE_ROOT = findSiteRoot();
+console.log("Website files are served from:", SITE_ROOT);
+try { console.log("Folders found there:", fs.readdirSync(SITE_ROOT).join(", ")); } catch (e) {}
+
 const PUBLIC_FILE_TYPES = [".html", ".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".svg", ".ico", ".webp", ".woff", ".woff2", ".ttf"];
 const PRIVATE_FILES = ["server.js", "database.js"];
 
@@ -38,10 +55,10 @@ app.use((req, res, next) => {
 
     if (rel.includes("..")) return res.status(404).send("Not found");
 
-    const full = path.join(__dirname, rel);
+    const full = path.join(SITE_ROOT, rel);
 
     // not a real file on disk = one of your API routes, let it through
-    if (!full.startsWith(__dirname) || !fs.existsSync(full) || !fs.statSync(full).isFile()) return next();
+    if (!full.startsWith(SITE_ROOT) || !fs.existsSync(full) || !fs.statSync(full).isFile()) return next();
 
     const ext = path.extname(full).toLowerCase();
     const name = path.basename(full).toLowerCase();
@@ -53,7 +70,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express.static(__dirname, { index: false }));
+app.use(express.static(SITE_ROOT, { index: false }));
 
 // Token Verification Middleware
 const verifyToken = (req, res, next) => {
@@ -92,17 +109,17 @@ const getKenyaDate = () => {
 // sub-folders (not hosi / patient). If none is found it shows the original text.
 app.get("/", (req, res) => {
 
-    if (fs.existsSync(path.join(__dirname, "index.html"))) {
-        return res.sendFile(path.join(__dirname, "index.html"));
+    if (fs.existsSync(path.join(SITE_ROOT, "index.html"))) {
+        return res.sendFile(path.join(SITE_ROOT, "index.html"));
     }
 
     try {
         const skip = ["node_modules", "hosi", "patient"];
-        const folders = fs.readdirSync(__dirname, { withFileTypes: true })
+        const folders = fs.readdirSync(SITE_ROOT, { withFileTypes: true })
             .filter(d => d.isDirectory() && !d.name.startsWith(".") && !skip.includes(d.name.toLowerCase()));
 
         for (const d of folders) {
-            if (fs.existsSync(path.join(__dirname, d.name, "index.html"))) {
+            if (fs.existsSync(path.join(SITE_ROOT, d.name, "index.html"))) {
                 return res.redirect("/" + encodeURIComponent(d.name) + "/index.html");
             }
         }
