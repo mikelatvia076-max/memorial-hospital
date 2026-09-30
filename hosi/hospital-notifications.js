@@ -3,7 +3,7 @@
 // HOSPITAL NOTIFICATION SYSTEM (MySQL API)
 // ======================================
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = API_URL;   // API_URL comes from config.js (was "http://localhost:5000")
 let notifications = [];
 let syncInterval = null;
 

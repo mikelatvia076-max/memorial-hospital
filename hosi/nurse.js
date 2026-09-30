@@ -38,7 +38,7 @@ async function loadNurses(){
 
 try {
 
-const response = await fetch("http://localhost:5000/nurses");
+const response = await fetch(API_URL + "/nurses");
 
 if(!response.ok) throw new Error("Failed fetching metrics");
 
@@ -192,7 +192,7 @@ role:
 
 try {
 
-const response = await fetch("http://localhost:5000/nurses", {
+const response = await fetch(API_URL + "/nurses", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(nurse)
@@ -589,7 +589,7 @@ if(confirmDelete){
 
 try {
 
-const response = await fetch("http://localhost:5000/nurses/" + index, {
+const response = await fetch(API_URL + "/nurses/" + index, {
     method: "DELETE"
 });
 

@@ -33,7 +33,7 @@ try{
 
 let response = await fetch(
 
-"http://localhost:5000/appointments"
+API_URL + "/appointments"
 
 );
 
@@ -348,7 +348,7 @@ try{
 let update =
 await fetch(
 
-"http://localhost:5000/hospital-update-appointment/"+id,
+API_URL + "/hospital-update-appointment/"+id,
 
 {
 
@@ -388,7 +388,7 @@ if(!update.ok){
 update =
 await fetch(
 
-"http://localhost:5000/appointments/"+id+"/status",
+API_URL + "/appointments/"+id+"/status",
 
 {
 
@@ -444,7 +444,7 @@ try {
 let appointmentResponse =
 await fetch(
 
-"http://localhost:5000/appointment/"+id
+API_URL + "/appointment/"+id
 
 );
 
@@ -453,7 +453,7 @@ if(!appointmentResponse.ok){
 appointmentResponse =
 await fetch(
 
-"http://localhost:5000/appointments/"+id
+API_URL + "/appointments/"+id
 
 );
 
@@ -480,7 +480,7 @@ let targetPatientId = appointment.patient_id || (appointments.find(a => a.id == 
 if (targetPatientId) {
     await fetch(
 
-        "http://localhost:5000/notifications",
+        API_URL + "/notifications",
 
         {
 
@@ -617,7 +617,7 @@ try{
 let response =
 await fetch(
 
-"http://localhost:5000/hospital-delete-appointment/"+id,
+API_URL + "/hospital-delete-appointment/"+id,
 
 {
 
@@ -637,7 +637,7 @@ if(!response.ok){
 response =
 await fetch(
 
-"http://localhost:5000/delete-appointment/"+id,
+API_URL + "/delete-appointment/"+id,
 
 {
 

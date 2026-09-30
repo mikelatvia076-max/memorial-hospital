@@ -9,7 +9,9 @@ const patientTable = document.querySelector("#patientTable tbody");
 const searchBox = document.getElementById("patientSearch");
 
 // API Base URL
-const API_URL = "http://localhost:5000";
+// API_URL now comes from config.js. Declaring it again here crashed the whole page
+// ("Identifier API_URL has already been declared"), so the old line is kept as a comment:
+// const API_URL = "http://localhost:5000";
 
 // LOAD PATIENTS ON PAGE LOAD
 fetchPatients();

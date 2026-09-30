@@ -39,7 +39,7 @@ try{
 
 const response = await fetch(
 
-"http://localhost:5000/doctors"
+API_URL + "/doctors"
 
 );
 
@@ -243,7 +243,7 @@ try{
 
 const response = await fetch(
 
-"http://localhost:5000/doctors",
+API_URL + "/doctors",
 
 {
 
@@ -676,7 +676,7 @@ try{
 
 const response = await fetch(
 
-"http://localhost:5000/doctors/" + id,
+API_URL + "/doctors/" + id,
 
 {
 

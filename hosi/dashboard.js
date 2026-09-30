@@ -17,11 +17,11 @@ async function loadHospitalData() {
     // Fetch all records asynchronously with robust individual error isolation
     try {
         const [pRes, pCountRes, dRes, nRes, aRes] = await Promise.all([
-            fetch("http://localhost:5000/patients"),
-            fetch("http://localhost:5000/api/patients/count"),
-            fetch("http://localhost:5000/doctors"),
-            fetch("http://localhost:5000/nurses"),
-            fetch("http://localhost:5000/appointments")
+            fetch(API_URL + "/patients"),
+            fetch(API_URL + "/api/patients/count"),
+            fetch(API_URL + "/doctors"),
+            fetch(API_URL + "/nurses"),
+            fetch(API_URL + "/appointments")
         ]);
 
         if (pRes.ok) {
@@ -150,7 +150,7 @@ async function deleteHospitalAppointment(appointmentId) {
     if (!confirmDelete) return;
 
     try {
-        const response = await fetch("http://localhost:5000/hospital-delete-appointment/" + appointmentId, {
+        const response = await fetch(API_URL + "/hospital-delete-appointment/" + appointmentId, {
             method: "DELETE"
         });
 
@@ -220,7 +220,7 @@ if (notification) {
     notification.addEventListener("click", async () => {
         let appointments = [];
         try {
-            const response = await fetch("http://localhost:5000/appointments");
+            const response = await fetch(API_URL + "/appointments");
             if (response.ok) appointments = await response.json();
         } catch (e) {}
 
@@ -244,7 +244,7 @@ async function updateHospitalNotifications() {
     let hospitalNotifications = [];
 
     try {
-        const response = await fetch("http://localhost:5000/appointments");
+        const response = await fetch(API_URL + "/appointments");
         if (response.ok) {
             const data = await response.json();
             hospitalNotifications = data.filter(a => a.status === "Pending");
