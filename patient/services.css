@@ -408,3 +408,18 @@ grid-template-columns:1fr;
 #serviceSearch{font-size:16px;padding:12px}
 .service-card{padding:18px}
 }
+
+
+/* ===== DECORATION ===== */
+body{background:linear-gradient(160deg,#e0f2fe,#f8fafc 55%,#ccfbf1);background-attachment:fixed}
+.services-header{box-shadow:0 12px 28px rgba(2,132,199,.35)}
+.services-header button{font-weight:bold}
+.services-section{border-top:5px solid #0284c7;box-shadow:0 12px 30px rgba(2,132,199,.15)}
+.services-section h2 i{color:#0284c7;margin-right:8px}
+#serviceSearch{background:#f8fafc;box-shadow:0 4px 12px rgba(2,132,199,.1)}
+#serviceSearch:focus{box-shadow:0 0 0 3px rgba(2,132,199,.2);background:white}
+.service-card i{display:inline-flex;align-items:center;justify-content:center;width:70px;height:70px;border-radius:50%;background:#e0f2fe;font-size:30px}
+.service-card:nth-child(4n+2){border-left-color:#10b981}.service-card:nth-child(4n+2) i{background:#d1fae5;color:#059669}
+.service-card:nth-child(4n+3){border-left-color:#8b5cf6}.service-card:nth-child(4n+3) i{background:#ede9fe;color:#7c3aed}
+.service-card:nth-child(4n){border-left-color:#f59e0b}.service-card:nth-child(4n) i{background:#fef3c7;color:#d97706}
+footer i{color:#fb7185}

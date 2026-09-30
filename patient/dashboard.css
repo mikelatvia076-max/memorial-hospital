@@ -448,3 +448,18 @@ gap:20px;
 .edit-box input,.edit-box select,.edit-box textarea{font-size:16px}
 #editBtn,#saveBtn{width:100%}
 }
+
+
+/* ===== DECORATION ===== */
+body{background:linear-gradient(160deg,#e0f2fe,#f8fafc 55%,#dbeafe);background-attachment:fixed}
+.profile-header{background:linear-gradient(135deg,#0284c7,#0f766e);box-shadow:0 10px 25px rgba(2,132,199,.35)}
+.profile-header h1 i{margin-right:8px}
+.profile-header button{border-radius:25px;font-weight:bold}
+.profile-card,.edit-box{border-top:5px solid #0284c7;box-shadow:0 12px 30px rgba(2,132,199,.15)}
+#profileImage{box-shadow:0 0 0 6px #e0f2fe,0 10px 25px rgba(2,132,199,.4)}
+.details-section h2,.edit-box h2{padding-bottom:10px;border-bottom:2px solid #e0f2fe}
+.details-section p{border-left:5px solid #0284c7;transition:.3s}
+.details-section p:hover{transform:translateX(6px);background:#e0f2fe}
+#editBtn,#saveBtn{background:linear-gradient(90deg,#0369a1,#0284c7);border-radius:25px;box-shadow:0 8px 18px rgba(2,132,199,.35);transition:.3s}
+#editBtn:hover,#saveBtn:hover{transform:translateY(-2px);background:linear-gradient(90deg,#0284c7,#0ea5e9)}
+.edit-box input:focus,.edit-box select:focus,.edit-box textarea:focus{outline:none;border-color:#0284c7;box-shadow:0 0 0 3px rgba(2,132,199,.2)}

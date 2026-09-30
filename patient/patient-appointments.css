@@ -405,3 +405,20 @@ th,td{white-space:nowrap}
 .appointment-card{padding:15px}
 th,td{padding:10px 8px;font-size:13px}
 }
+
+
+/* ===== DECORATION ===== */
+body{background:linear-gradient(160deg,#e0f2fe,#f8fafc 55%,#ccfbf1);background-attachment:fixed}
+.appointments-header{box-shadow:0 12px 28px rgba(2,132,199,.35)}
+.appointments-header h1 i{margin-right:8px}
+.appointments-header button{font-weight:bold}
+.appointment-card{border-top:5px solid #0284c7;box-shadow:0 12px 30px rgba(2,132,199,.15)}
+.card-title h2{padding-bottom:12px;border-bottom:2px solid #e0f2fe}
+.card-title h2 i{color:#0284c7;margin-right:8px}
+thead{background:linear-gradient(90deg,#0284c7,#0f766e)}
+tbody tr:nth-child(even){background:#f8fbfe}
+tbody tr:hover{background:#e0f2fe}
+.status{display:inline-block;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.cancel-btn{border-radius:20px;box-shadow:0 4px 10px rgba(220,38,38,.3)}
+footer{font-size:14px}
+footer i{color:#fb7185}

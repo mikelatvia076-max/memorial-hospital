@@ -197,3 +197,13 @@
 #patientForm input,#patientForm select{font-size:16px}
 .view,.delete{padding:8px 12px}
 }
+
+
+/* ===== DECORATION ===== */
+#patientForm{background:#f8fbfe;padding:20px;border-radius:15px;border:1px dashed #7dd3fc}
+#patientForm button{background:linear-gradient(90deg,#075985,#0284c7);box-shadow:0 6px 14px rgba(2,132,199,.3)}
+#patientTable tbody tr:nth-child(even){background:#f8fbfe}
+.view{background:linear-gradient(90deg,#0284c7,#0ea5e9);box-shadow:0 4px 10px rgba(2,132,199,.3)}
+.delete{background:linear-gradient(90deg,#dc2626,#f43f5e);box-shadow:0 4px 10px rgba(220,38,38,.3)}
+.view:hover,.delete:hover{transform:translateY(-2px)}
+#patientSearch:focus{border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.2)}

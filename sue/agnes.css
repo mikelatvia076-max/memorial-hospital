@@ -305,3 +305,43 @@ button{max-width:100%}
 .site-footer{font-size:13px !important;color:#bae6fd;margin-top:8px}
 
 @media(prefers-reduced-motion:reduce){#loginpage>*,#kasa,.heartbeat i{animation:none}}
+
+
+/* ===== ORIGINAL LOOK RESTORED + EXTRA DECORATION ===== */
+html,body{background:#111}
+body{padding:6px}
+
+/* original dark #111 background + neon glowing border are back */
+#loginpage{
+    background-color:#111;
+    background-image:
+        radial-gradient(circle at 8% 8%,rgba(0,247,255,.30),transparent 35%),
+        radial-gradient(circle at 92% 92%,rgba(255,0,255,.25),transparent 35%),
+        linear-gradient(rgba(0,0,0,.30),rgba(0,0,0,.30)),
+        url(agneses_pdf.jpeg);
+    background-size:auto,auto,auto,cover;
+    background-position:0 0,0 0,0 0,55% 25%;
+    background-repeat:no-repeat;
+    border:3px solid #00f7ff;
+    border-radius:15px;
+    min-height:calc(100dvh - 12px);
+    animation:glow 2s infinite alternate;
+}
+
+/* original rainbow buttons are back */
+.portal-button.staff,.portal-button.patient{
+    background:linear-gradient(90deg,#ff0000,#ff9900,#00ff00,#00ffff,#0000ff,#ff00ff,#ff0000);
+    background-size:600%;
+    animation:rainbow 6s linear infinite;
+    border:2px solid rgba(255,255,255,.7);
+    text-shadow:0 1px 4px rgba(0,0,0,.8);
+}
+
+/* extra decoration */
+.shine-title::after{content:"";display:block;width:120px;height:4px;margin:14px auto 0;border-radius:4px;background:linear-gradient(90deg,#00f5ff,#ff00ff,#00ff66)}
+.glass-card{border-color:rgba(0,247,255,.5);box-shadow:0 0 18px rgba(0,247,255,.25),0 10px 30px rgba(0,0,0,.35)}
+.glass-card:nth-child(2){border-color:rgba(255,0,255,.5);box-shadow:0 0 18px rgba(255,0,255,.25),0 10px 30px rgba(0,0,0,.35)}
+.feature{border-color:rgba(0,255,102,.4)}
+.feature:hover{box-shadow:0 0 18px rgba(0,255,102,.5)}
+#kasa{box-shadow:0 0 25px rgba(0,247,255,.6),0 8px 25px rgba(0,0,0,.45);border:2px solid rgba(255,255,255,.8)}
+.site-footer{padding-top:10px;border-top:1px dashed rgba(255,255,255,.3);max-width:400px;margin-left:auto;margin-right:auto}

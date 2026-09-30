@@ -134,3 +134,17 @@ body{margin:0}
 .notification-box{padding:15px}
 .notification-box button{margin:8px 8px 0 0}
 }
+
+
+/* ===== DECORATION ===== */
+body{background:linear-gradient(160deg,#e8f4fb,#f8fbfd 60%,#e3f1f8);background-attachment:fixed}
+.notification-page{background:none}
+.header{background:linear-gradient(135deg,#004e64,#087ea4);border-radius:18px;box-shadow:0 10px 25px rgba(0,78,100,.3)}
+.header h1{color:white}
+.header button{background:white;color:#004e64;border-radius:25px;font-weight:bold;transition:.3s}
+.header button:hover{transform:scale(1.05)}
+.notification-box{border-left:6px solid #087ea4;border-radius:15px;box-shadow:0 8px 20px rgba(0,78,100,.12);transition:.3s}
+.notification-box:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(0,78,100,.2)}
+.notification-box button{background:linear-gradient(90deg,#087ea4,#00a8cc);box-shadow:0 5px 12px rgba(8,126,164,.3)}
+.delete-btn{background:linear-gradient(90deg,#d90429,#ef476f) !important}
+.empty{border:2px dashed #087ea4;color:#004e64}
