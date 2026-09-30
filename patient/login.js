@@ -56,7 +56,7 @@ try{
 
 let response = await fetch(
 
-"http://localhost:5000/login",
+API_URL + "/login",   // API_URL comes from config.js (was "http://localhost:5000/login")
 
 {
 
@@ -167,6 +167,18 @@ localStorage.setItem(
 JSON.stringify(data.patient)
 
 );
+
+
+
+
+
+// LOGIN TOKEN FROM SERVER (added)
+
+if(data.token){
+
+localStorage.setItem("token", data.token);
+
+}
 
 
 
