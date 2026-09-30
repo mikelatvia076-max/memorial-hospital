@@ -533,3 +533,27 @@ MOBILE
 
 
 }
+
+/* ===== MOBILE FIT ===== */
+.appointments{overflow-x:auto}
+.appointments table{width:100%;border-collapse:collapse}
+.appointments th{padding:12px 8px;background:#087ea4;color:white}
+
+@media(max-width:900px){
+.sidebar{top:auto;bottom:0;width:100%;height:auto;padding:4px;z-index:100;background:#004e64;box-shadow:0 -3px 10px rgba(0,0,0,.2)}
+.logo{display:none}
+.sidebar ul{display:flex;overflow-x:auto;gap:2px}
+.sidebar ul li{margin:0;flex:0 0 auto;min-width:76px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;text-align:center;padding:6px 2px;cursor:pointer}
+.sidebar ul li a{flex-direction:column;gap:4px;padding:6px 4px;font-size:10px;width:100%;justify-content:center}
+.sidebar ul li i{width:auto;font-size:18px}
+.main{margin-left:0;padding:12px 12px 95px}
+.topbar{padding:14px;gap:10px;flex-wrap:wrap}
+.topbar h1{font-size:18px}
+.topbar a{display:flex;align-items:center;gap:6px;text-decoration:none;color:#004e64;font-size:14px}
+.cards{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;margin-top:20px}
+.card{padding:20px 10px}
+.card i{font-size:32px}
+.card h1{font-size:30px}
+.appointments{padding:15px;margin-top:20px}
+.appointments table{min-width:520px;font-size:14px}
+}

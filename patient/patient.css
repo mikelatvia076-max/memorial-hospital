@@ -82,3 +82,10 @@ a{
 color:#075985;
 
 }
+
+/* ===== MOBILE FIT ===== */
+body{min-height:100vh;height:auto;padding:15px}
+.patient-card{width:100%;max-width:380px;padding:25px 20px}
+.patient-card h1{font-size:22px}
+input,select,textarea{font-size:16px} /* stops iPhone auto-zoom */
+button{font-size:16px}

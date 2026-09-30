@@ -400,3 +400,11 @@ grid-template-columns:1fr;
 
 
 }
+
+/* ===== MOBILE FIT ===== */
+@media(max-width:700px){
+.services-header{padding:18px}
+.services-header button{width:100%}
+#serviceSearch{font-size:16px;padding:12px}
+.service-card{padding:18px}
+}

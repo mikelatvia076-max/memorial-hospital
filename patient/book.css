@@ -495,3 +495,231 @@ body{
 
 
 }
+
+
+
+/* =====================================================
+   PHONE-FRIENDLY IMPROVEMENTS (added)
+===================================================== */
+
+html{
+    -webkit-text-size-adjust:100%;
+}
+
+*{
+    -webkit-tap-highlight-color:transparent;
+}
+
+body{
+    min-height:100vh;
+    min-height:100dvh;
+    padding-top:max(30px, env(safe-area-inset-top));
+    padding-right:max(30px, env(safe-area-inset-right));
+    padding-bottom:max(30px, env(safe-area-inset-bottom));
+    padding-left:max(30px, env(safe-area-inset-left));
+}
+
+
+/* HEADER: title on top, neat "Back" button underneath */
+
+.appointment-header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+}
+
+.appointment-header h1{
+    line-height:1.3;
+    overflow-wrap:anywhere;
+}
+
+.appointment-header button{
+    width:auto;
+    min-width:200px;
+    max-width:100%;
+    padding:12px 26px;
+    font-size:16px;
+    background:rgba(255,255,255,.95);
+    color:#0066ff;
+    box-shadow:0 4px 14px rgba(0,0,0,.18);
+}
+
+.appointment-header button i{
+    color:#0066ff;
+}
+
+.appointment-header button:hover{
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
+}
+
+
+/* FORM FIELDS: big touch targets, 16px text (stops iPhone zoom-in) */
+
+input,
+select,
+textarea{
+    min-height:50px;
+    max-width:100%;
+    font-size:16px;
+    background:#fff;
+    color:#0f172a;
+    -webkit-appearance:none;
+    appearance:none;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+select{
+    padding-right:42px;
+    text-overflow:ellipsis;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%230077ff'%3E%3Cpath d='M5 7l5 6 5-6z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 14px center;
+    background-size:18px;
+}
+
+/* date / time pickers: same height and left-aligned text on iPhone */
+
+input[type="date"],
+input[type="time"]{
+    display:block;
+    min-width:0;
+    text-align:left;
+}
+
+input[type="date"]::-webkit-date-and-time-value,
+input[type="time"]::-webkit-date-and-time-value{
+    text-align:left;
+}
+
+/* locked (auto-filled) fields look locked */
+
+input[readonly]{
+    background:#f1f5f9;
+    color:#475569;
+    border-color:#e2e8f0;
+    cursor:not-allowed;
+}
+
+input[readonly]:focus{
+    box-shadow:none;
+    border-color:#e2e8f0;
+}
+
+.form-row .form-group{
+    min-width:0;
+}
+
+button[type="submit"]{
+    min-height:54px;
+}
+
+
+/* TOUCH SCREENS: no "lift" on tap, press feedback instead */
+
+@media (hover:none){
+
+    button:hover{
+        transform:none;
+        box-shadow:0 0 20px rgba(0,150,255,0.5);
+    }
+
+    .appointment-header button:hover{
+        box-shadow:0 4px 14px rgba(0,0,0,.18);
+    }
+
+    button:active{
+        transform:scale(.97);
+    }
+
+}
+
+
+/* PHONES */
+
+@media (max-width:650px){
+
+    body{
+        align-items:flex-start;
+        padding-top:max(12px, env(safe-area-inset-top));
+        padding-right:max(12px, env(safe-area-inset-right));
+        padding-bottom:max(12px, env(safe-area-inset-bottom));
+        padding-left:max(12px, env(safe-area-inset-left));
+    }
+
+    .appointment-header{
+        padding:26px 16px;
+        border-radius:20px 20px 0 0;
+    }
+
+    .appointment-header h1{
+        font-size:22px;
+        letter-spacing:0;
+    }
+
+    .appointment-header p{
+        font-size:15px;
+        margin-top:6px;
+    }
+
+    .appointment-header button{
+        width:100%;
+    }
+
+    .appointment-card{
+        padding:22px 18px;
+        border-radius:0 0 20px 20px;
+    }
+
+    .appointment-card h2{
+        font-size:22px;
+        margin-bottom:22px;
+    }
+
+    .form-row{
+        gap:0;
+    }
+
+    .footer{
+        font-size:13px;
+    }
+
+}
+
+
+/* SMALL PHONES (iPhone SE, old Androids) */
+
+@media (max-width:380px){
+
+    .appointment-header h1{
+        font-size:20px;
+    }
+
+    .appointment-card{
+        padding:18px 14px;
+    }
+
+    label{
+        font-size:14px;
+    }
+
+}
+
+
+/* respect "reduce motion" */
+
+@media (prefers-reduced-motion:reduce){
+
+    .appointment-header h1{
+        animation:none;
+    }
+
+    button{
+        transition:none;
+    }
+
+}

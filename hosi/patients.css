@@ -190,3 +190,10 @@
 
 
 }
+
+/* ===== MOBILE FIT ===== */
+@media(max-width:600px){
+#patientSearch{width:100%}
+#patientForm input,#patientForm select{font-size:16px}
+.view,.delete{padding:8px 12px}
+}

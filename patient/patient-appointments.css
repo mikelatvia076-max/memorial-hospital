@@ -394,3 +394,14 @@ padding:15px;
 
 
 }
+
+/* ===== MOBILE FIT ===== */
+table{min-width:650px}
+th,td{white-space:nowrap}
+@media(max-width:700px){
+.appointments-header{padding:18px}
+.appointments-header h1{font-size:22px}
+.appointments-header button{width:100%}
+.appointment-card{padding:15px}
+th,td{padding:10px 8px;font-size:13px}
+}

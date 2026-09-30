@@ -1,24 +1,26 @@
 // ===============================
 // API BASE URL (FIX)
-// Uses API_BASE from config.js if it exists, otherwise:
+// Uses API_URL from config.js if it exists (API_BASE also accepted), otherwise:
 // hosted / served by server.js -> same origin ("")
 // Live Server or file          -> http://localhost:5000
 // ===============================
 
 const PORTAL_API = (
 
-    (typeof API_BASE !== "undefined" && API_BASE)
+    (typeof API_URL !== "undefined" && API_URL)
+
+    ? String(API_URL).replace(/\/+$/, "")
+
+    : (typeof API_BASE !== "undefined" && API_BASE)
 
     ? String(API_BASE).replace(/\/+$/, "")
 
     : (
-
         (
             (location.hostname === "localhost" || location.hostname === "127.0.0.1")
             && location.port !== "5000"
         )
         || location.protocol === "file:"
-
     )
     ? "http://localhost:5000"
     : ""

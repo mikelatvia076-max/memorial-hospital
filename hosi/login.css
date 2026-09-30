@@ -260,3 +260,12 @@ padding:30px;
 
 
 }
+
+/* ===== MOBILE FIT ===== */
+body{height:auto;min-height:100vh;padding:15px}
+.login-box{width:100%;max-width:380px}
+select,.input-box input{font-size:16px}
+@media(max-width:450px){
+.login-box{width:100%;padding:25px 20px}
+.hospital-logo i{font-size:48px}
+}

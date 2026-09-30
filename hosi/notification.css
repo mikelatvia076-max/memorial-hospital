@@ -276,3 +276,13 @@ background:#198754;
 background:#dc3545;
 
 }
+
+/* ===== MOBILE FIT ===== */
+@media(max-width:768px){
+body{padding:12px;align-items:flex-start}
+.notification-container h1{font-size:22px;margin:15px 0;word-break:break-word}
+.back-btn{width:100%}
+.notification-card{padding:15px;word-break:break-word}
+.notification-actions{flex-wrap:wrap}
+.notification-actions button{flex:1 1 30%}
+}

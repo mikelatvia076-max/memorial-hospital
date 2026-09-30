@@ -121,3 +121,16 @@ margin-top:20px;
 border-radius:15px;
 
 }
+
+/* ===== MOBILE FIT ===== */
+*{box-sizing:border-box;font-family:Arial,sans-serif}
+body{margin:0}
+.notification-box{word-break:break-word}
+@media(max-width:700px){
+.notification-page{padding:12px}
+.header{flex-direction:column;gap:15px;text-align:center;padding:16px}
+.header h1{font-size:22px}
+.header button{width:100%}
+.notification-box{padding:15px}
+.notification-box button{margin:8px 8px 0 0}
+}
