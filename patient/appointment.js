@@ -7,17 +7,30 @@
 
 // ===============================
 // API BASE URL (FIX)
+// Uses API_BASE from config.js if it exists, otherwise:
+// hosted / served by server.js -> same origin ("")
+// Live Server or file          -> http://localhost:5000
 // ===============================
-// Hosted on Render / served by server.js  -> "" (same origin)
-// Opened with Live Server or from a file   -> http://localhost:5000
 
-const API_BASE =
-    (
-        (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-        && location.port !== "5000"
-    ) || location.protocol === "file:"
-        ? "http://localhost:5000"
-        : "";
+const PORTAL_API = (
+
+    (typeof API_BASE !== "undefined" && API_BASE)
+
+    ? String(API_BASE).replace(/\/+$/, "")
+
+    : (
+
+        (
+            (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+            && location.port !== "5000"
+        )
+        || location.protocol === "file:"
+
+    )
+    ? "http://localhost:5000"
+    : ""
+
+);
 
 
 // ===============================
@@ -111,7 +124,7 @@ async function loadMedicalStaff() {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), 60000);
 
-        const doctorResponse = await fetch(API_BASE + "/doctors", {
+        const doctorResponse = await fetch(PORTAL_API + "/doctors", {
             signal: controller.signal
         });
 
@@ -230,7 +243,7 @@ form.addEventListener("submit", async function (e) {
 
     try {
 
-        let response = await fetch(API_BASE + "/appointments", {
+        let response = await fetch(PORTAL_API + "/appointments", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(appointment)
@@ -247,7 +260,7 @@ form.addEventListener("submit", async function (e) {
         // CREATE PATIENT NOTIFICATION
         // ===============================
 
-        await fetch(API_BASE + "/notifications", {
+        await fetch(PORTAL_API + "/notifications", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -275,7 +288,7 @@ form.addEventListener("submit", async function (e) {
 
         try {
 
-            await fetch(API_BASE + "/notifications", {
+            await fetch(PORTAL_API + "/notifications", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -297,7 +310,7 @@ form.addEventListener("submit", async function (e) {
                 })
             });
 
-            await fetch(API_BASE + "/hospital-notifications", {
+            await fetch(PORTAL_API + "/hospital-notifications", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

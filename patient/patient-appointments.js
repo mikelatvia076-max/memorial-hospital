@@ -1,3 +1,31 @@
+// ===============================
+// API BASE URL (FIX)
+// Uses API_BASE from config.js if it exists, otherwise:
+// hosted / served by server.js -> same origin ("")
+// Live Server or file          -> http://localhost:5000
+// ===============================
+
+const PORTAL_API = (
+
+    (typeof API_BASE !== "undefined" && API_BASE)
+
+    ? String(API_BASE).replace(/\/+$/, "")
+
+    : (
+
+        (
+            (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+            && location.port !== "5000"
+        )
+        || location.protocol === "file:"
+
+    )
+    ? "http://localhost:5000"
+    : ""
+
+);
+
+
 // ======================================
 // AGNES MEMORIAL MEDICAL HOSPITAL
 // PATIENT APPOINTMENT HISTORY
@@ -12,6 +40,10 @@ document.getElementById("patientAppointments");
 
 
 let currentPatient =
+
+JSON.parse(localStorage.getItem("currentUser"))
+
+||
 
 JSON.parse(localStorage.getItem("loggedPatient"))
 
@@ -58,7 +90,7 @@ return;
 
 let response = await fetch(
 
-"http://localhost:5000/patient-appointments/"
+PORTAL_API + "/patient-appointments/"
 
 +
 
@@ -341,7 +373,7 @@ try{
 
 let response = await fetch(
 
-"http://localhost:5000/cancel-appointment/"+id,
+PORTAL_API + "/cancel-appointment/" + id,
 
 {
 

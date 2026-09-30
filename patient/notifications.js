@@ -1,3 +1,31 @@
+// ===============================
+// API BASE URL (FIX)
+// Uses API_BASE from config.js if it exists, otherwise:
+// hosted / served by server.js -> same origin ("")
+// Live Server or file          -> http://localhost:5000
+// ===============================
+
+const PORTAL_API = (
+
+    (typeof API_BASE !== "undefined" && API_BASE)
+
+    ? String(API_BASE).replace(/\/+$/, "")
+
+    : (
+
+        (
+            (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+            && location.port !== "5000"
+        )
+        || location.protocol === "file:"
+
+    )
+    ? "http://localhost:5000"
+    : ""
+
+);
+
+
 // =======================================
 // AGNES MEMORIAL MEDICAL HOSPITAL
 // PATIENT NOTIFICATIONS SYSTEM
@@ -13,7 +41,15 @@ document.getElementById("notificationList");
 
 let currentPatient =
 
+JSON.parse(localStorage.getItem("currentUser"))
+
+||
+
 JSON.parse(localStorage.getItem("loggedPatient"))
+
+||
+
+JSON.parse(localStorage.getItem("currentPatient"))
 
 ||
 
@@ -58,7 +94,7 @@ try{
 
 let response = await fetch(
 
-"http://localhost:5000/notifications/"
+PORTAL_API + "/notifications/"
 
 +
 
@@ -337,7 +373,7 @@ try{
 
 await fetch(
 
-"http://localhost:5000/read-notification/"
+PORTAL_API + "/notifications/mark-read/"
 
 +
 
@@ -394,7 +430,7 @@ try{
 
 await fetch(
 
-"http://localhost:5000/notifications/"
+PORTAL_API + "/notifications/"
 
 +
 
