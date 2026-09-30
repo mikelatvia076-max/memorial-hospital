@@ -29,7 +29,7 @@ button:visited{
     background: #111;
     color: white;
     text-align: center;
-    background-image:url(agneses_pdf.jpeg), url(agneses.pdf.jpeg); /* both spellings, whichever file exists is used */
+    background-image:url(agneses.jpeg); /* both spellings, whichever file exists is used */
      min-height: 100dvh;
 
     animation: glow 2s infinite alternate;
@@ -201,7 +201,7 @@ img{max-width:100%}
 #loginpage{
     background-image:
         linear-gradient(180deg,rgba(0,30,50,.75) 0%,rgba(0,30,50,.55) 45%,rgba(0,30,50,.85) 100%),
-        url(agneses_pdf.jpeg);
+        url(agneses.jpeg);
     background-size:cover;
     background-position:55% 25%;
     background-repeat:no-repeat;
