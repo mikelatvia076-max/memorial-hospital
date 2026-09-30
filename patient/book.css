@@ -1,0 +1,497 @@
+/* ===============================
+   AGNES MEMORIAL HOSPITAL
+   APPOINTMENT PAGE CSS
+================================ */
+
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, sans-serif;
+}
+
+
+
+/* BODY */
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    135deg,
+    #e3f6ff,
+    #ffffff,
+    #d8f0ff
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+
+
+/* MAIN CONTAINER */
+
+.appointment-container{
+
+    width:100%;
+
+    max-width:850px;
+
+}
+
+
+
+/* ===============================
+ HEADER
+================================ */
+
+
+.appointment-header{
+
+
+    background:
+    linear-gradient(
+    90deg,
+    #0066ff,
+    #00c6ff
+    );
+
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px 20px;
+
+
+    border-radius:
+
+    25px 25px 0 0;
+
+
+    box-shadow:
+
+    0 0 25px rgba(0,140,255,0.5);
+
+
+}
+
+
+
+.appointment-header h1{
+
+
+    font-size:35px;
+
+    letter-spacing:1px;
+
+    animation:glow 3s infinite;
+
+
+}
+
+
+
+.appointment-header i{
+
+    margin-right:10px;
+
+}
+
+
+
+.appointment-header p{
+
+
+    margin-top:10px;
+
+    font-size:18px;
+
+}
+
+
+
+
+/* SHINING EFFECT */
+
+@keyframes glow{
+
+
+    0%{
+
+        text-shadow:0 0 5px white;
+
+    }
+
+
+    50%{
+
+        text-shadow:
+
+        0 0 20px white,
+
+        0 0 40px #00ffff;
+
+    }
+
+
+    100%{
+
+        text-shadow:0 0 5px white;
+
+    }
+
+}
+
+
+
+/* ===============================
+ APPOINTMENT CARD
+================================ */
+
+
+.appointment-card{
+
+
+    background:white;
+
+
+    padding:40px;
+
+
+    border-radius:
+
+    0 0 25px 25px;
+
+
+    box-shadow:
+
+    0 10px 35px rgba(0,0,0,0.15);
+
+
+}
+
+
+
+.appointment-card h2{
+
+
+    text-align:center;
+
+
+    color:#0066ff;
+
+
+    margin-bottom:30px;
+
+
+    font-size:28px;
+
+
+}
+
+
+
+.appointment-card h2 i{
+
+    margin-right:10px;
+
+}
+
+
+
+/* ===============================
+ FORM
+================================ */
+
+
+.form-group{
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+label{
+
+
+    display:block;
+
+
+    margin-bottom:8px;
+
+
+    font-weight:bold;
+
+
+    color:#333;
+
+
+}
+
+
+
+label i{
+
+    color:#0077ff;
+
+    margin-right:7px;
+
+}
+
+
+
+/* INPUTS */
+
+
+input,
+select,
+textarea{
+
+
+    width:100%;
+
+
+    padding:14px;
+
+
+    border-radius:12px;
+
+
+    border:2px solid #ddd;
+
+
+    outline:none;
+
+
+    font-size:16px;
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+/* FOCUS EFFECT */
+
+
+input:focus,
+select:focus,
+textarea:focus{
+
+
+    border-color:#008cff;
+
+
+    box-shadow:
+
+    0 0 12px rgba(0,140,255,0.5);
+
+
+}
+
+
+
+/* ROW DESIGN */
+
+
+.form-row{
+
+
+    display:flex;
+
+
+    gap:20px;
+
+
+}
+
+
+
+.form-row .form-group{
+
+
+    flex:1;
+
+
+}
+
+
+
+/* TEXT AREA */
+
+
+textarea{
+
+
+    resize:none;
+
+
+}
+
+
+
+/* ===============================
+ BUTTON
+================================ */
+
+
+button{
+
+
+    width:100%;
+
+
+    padding:16px;
+
+
+    border:none;
+
+
+    border-radius:35px;
+
+
+    background:
+
+    linear-gradient(
+    90deg,
+    #0077ff,
+    #00d4ff
+    );
+
+
+    color:white;
+
+
+    font-size:18px;
+
+
+    font-weight:bold;
+
+
+    cursor:pointer;
+
+
+    transition:0.4s;
+
+
+    box-shadow:
+
+    0 0 20px rgba(0,150,255,0.5);
+
+
+}
+
+
+
+button i{
+
+    margin-right:10px;
+
+}
+
+
+
+button:hover{
+
+
+    transform:translateY(-5px);
+
+
+    box-shadow:
+
+    0 0 20px #00ffff,
+
+    0 0 40px #0077ff;
+
+
+}
+
+
+
+/* ===============================
+ FOOTER
+================================ */
+
+
+.footer{
+
+
+    text-align:center;
+
+
+    margin-top:20px;
+
+
+    color:#555;
+
+
+    font-size:15px;
+
+
+}
+
+
+
+/* ===============================
+ MOBILE DESIGN
+================================ */
+
+
+@media(max-width:650px){
+
+
+body{
+
+    padding:15px;
+
+}
+
+
+.appointment-header h1{
+
+
+    font-size:24px;
+
+
+}
+
+
+
+.appointment-card{
+
+
+    padding:25px;
+
+
+}
+
+
+
+.form-row{
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+}

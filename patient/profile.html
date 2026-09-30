@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Patient Profile | Agnes Memorial Medical Hospital
+</title>
+
+
+<link rel="stylesheet" href="dashboard.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+</head>
+
+
+
+<body>
+
+
+<div class="profile-page">
+
+
+
+<!-- HEADER -->
+
+<div class="profile-header">
+
+
+<h1>
+
+<i class="fa-solid fa-user-circle"></i>
+
+My Profile
+
+</h1>
+
+
+
+
+<button onclick="goDashboard()">
+
+<i class="fa fa-arrow-left"></i>
+
+Back To Dashboard
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- PROFILE CARD -->
+
+
+<div class="profile-card">
+
+
+
+
+
+<!-- PROFILE IMAGE -->
+
+
+<div class="photo-section">
+
+
+<img 
+
+id="profileImage"
+
+src="images/default.png"
+
+alt="Patient Photo">
+
+
+
+
+
+<label>
+
+<i class="fa fa-camera"></i>
+
+Change Photo
+
+</label>
+
+
+
+<input
+
+type="file"
+
+id="imageUpload"
+
+accept="image/*">
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- PROFILE DETAILS -->
+
+
+<div class="details-section">
+
+
+<h2>
+
+<i class="fa fa-id-card"></i>
+
+Patient Information
+
+</h2>
+
+
+
+
+<div id="displayDetails">
+
+
+
+
+
+<p>
+
+<i class="fa fa-user"></i>
+
+<b>Name:</b>
+
+<span id="showName">
+</span>
+
+
+</p>
+
+
+
+
+
+
+<p>
+
+<i class="fa fa-envelope"></i>
+
+<b>Email:</b>
+
+<span id="showEmail">
+</span>
+
+
+</p>
+
+
+
+
+
+
+
+<p>
+
+<i class="fa fa-phone"></i>
+
+<b>Phone:</b>
+
+<span id="showPhone">
+</span>
+
+
+</p>
+
+
+
+
+
+
+
+<p>
+
+<i class="fa fa-calendar"></i>
+
+<b>Age:</b>
+
+<span id="showAge">
+</span>
+
+
+</p>
+
+
+
+
+
+
+
+
+<p>
+
+<i class="fa fa-venus-mars"></i>
+
+<b>Gender:</b>
+
+<span id="showGender">
+</span>
+
+
+</p>
+
+
+
+
+
+
+
+
+<p>
+
+<i class="fa fa-location-dot"></i>
+
+<b>Address:</b>
+
+<span id="showAddress">
+</span>
+
+
+</p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<button id="editBtn">
+
+
+<i class="fa fa-edit"></i>
+
+Edit Profile
+
+
+</button>
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- EDIT PROFILE BOX -->
+
+
+<div class="edit-box" id="editBox">
+
+
+
+<h2>
+
+<i class="fa fa-user-pen"></i>
+
+Update Profile Details
+
+</h2>
+
+
+
+
+
+
+
+
+<input
+
+id="patientNameInput"
+
+type="text"
+
+placeholder="Full Name">
+
+
+
+
+
+
+<input
+
+id="patientEmailInput"
+
+type="email"
+
+placeholder="Email Address">
+
+
+
+
+
+
+
+
+<input
+
+id="patientPhoneInput"
+
+type="text"
+
+placeholder="Phone Number">
+
+
+
+
+
+
+
+
+<input
+
+id="patientAgeInput"
+
+type="number"
+
+placeholder="Age">
+
+
+
+
+
+
+
+
+
+<select id="patientGenderInput">
+
+
+<option value="">
+
+Select Gender
+
+</option>
+
+
+<option>
+
+Male
+
+</option>
+
+
+<option>
+
+Female
+
+</option>
+
+
+</select>
+
+
+
+
+
+
+
+
+<textarea
+
+id="patientAddressInput"
+
+placeholder="Address">
+
+</textarea>
+
+
+
+
+
+
+
+
+
+<button 
+
+type="button"
+
+id="saveBtn">
+
+
+<i class="fa fa-save"></i>
+
+
+Save Changes
+
+
+</button>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<script src="config.js"></script>
+
+<script src="profile.js"></script>
+
+
+</body>
+
+</html>

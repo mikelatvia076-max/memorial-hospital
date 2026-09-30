@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Book Appointment | Agnes Memorial Medical Hospital
+</title>
+
+
+<link rel="stylesheet" href="book.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+<div class="appointment-container">
+
+
+
+<header class="appointment-header">
+
+
+<div>
+
+<h1>
+
+<i class="fa-solid fa-hospital"></i>
+
+Agnes Memorial Medical Hospital
+
+</h1>
+
+
+<p>
+
+Online Patient Appointment Booking System
+
+</p>
+
+
+</div>
+
+
+
+
+<button 
+type="button"
+onclick="goDashboard()">
+
+
+<i class="fa fa-arrow-left"></i>
+
+Back To Dashboard
+
+
+</button>
+
+
+</header>
+
+
+
+
+
+
+<section class="appointment-card">
+
+
+<h2>
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Book Hospital Appointment
+
+</h2>
+
+
+
+
+
+
+<form id="appointmentForm">
+
+
+
+<!-- PATIENT DETAILS -->
+
+<div class="form-group">
+
+<label>
+
+<i class="fa fa-user"></i>
+
+Patient Name
+
+</label>
+
+
+<input
+
+type="text"
+
+id="patientName"
+
+readonly>
+
+
+</div>
+
+
+
+
+
+
+<div class="form-row">
+
+
+<div class="form-group">
+
+<label>
+
+<i class="fa fa-id-card"></i>
+
+Patient ID
+
+</label>
+
+
+<input
+
+type="text"
+
+id="patientID"
+
+readonly>
+
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+<label>
+
+<i class="fa fa-phone"></i>
+
+Phone
+
+</label>
+
+
+<input
+
+type="tel"
+
+id="phone"
+
+readonly>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+
+<i class="fa fa-envelope"></i>
+
+Email
+
+</label>
+
+
+<input
+
+type="email"
+
+id="email"
+
+readonly>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- DEPARTMENT -->
+
+<div class="form-group">
+
+<label>
+
+<i class="fa fa-building"></i>
+
+Department
+
+</label>
+
+
+
+<select id="department" required>
+
+<option value="">
+
+Choose Department
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- STAFF -->
+
+
+<div class="form-group">
+
+
+<label>
+
+<i class="fa fa-user-doctor"></i>
+
+Doctor / Nurse
+
+</label>
+
+
+
+<select id="staff" required>
+
+
+<option value="">
+
+Choose Medical Staff
+
+</option>
+
+
+</select>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="form-row">
+
+
+
+<div class="form-group">
+
+
+<label>
+
+<i class="fa fa-calendar"></i>
+
+Date
+
+</label>
+
+
+<input
+
+type="date"
+
+id="date"
+
+required>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+
+<i class="fa fa-clock"></i>
+
+Time
+
+</label>
+
+
+<input
+
+type="time"
+
+id="time"
+
+required>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+
+<i class="fa fa-notes-medical"></i>
+
+Reason For Visit
+
+</label>
+
+
+
+<textarea
+
+id="reason"
+
+rows="5"
+
+placeholder="Explain reason for visit"
+
+required></textarea>
+
+
+
+</div>
+
+
+
+
+
+
+
+<button type="submit">
+
+
+<i class="fa fa-paper-plane"></i>
+
+Send Appointment
+
+
+</button>
+
+
+
+
+
+</form>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+<p>
+
+© Agnes Memorial Medical Hospital
+
+</p>
+
+
+</footer>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- EMAIL JS -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+
+
+
+<script>
+
+
+(function(){
+
+emailjs.init("g9hr5NaZyT6jgPZFh");
+
+})();
+
+
+
+
+
+function goDashboard(){
+
+
+window.location.href="patient-dashboard.html";
+
+
+}
+
+
+
+</script>
+
+
+
+
+<script src="config.js"></script>
+
+<script src="appointment.js"></script>
+
+
+
+</body>
+
+</html>
