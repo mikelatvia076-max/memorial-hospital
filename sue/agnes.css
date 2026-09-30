@@ -318,7 +318,7 @@ body{padding:6px}
         radial-gradient(circle at 8% 8%,rgba(0,247,255,.30),transparent 35%),
         radial-gradient(circle at 92% 92%,rgba(255,0,255,.25),transparent 35%),
         linear-gradient(rgba(0,0,0,.30),rgba(0,0,0,.30)),
-        url(agneses_pdf.jpeg);
+        url(agneses.jpeg);
     background-size:auto,auto,auto,cover;
     background-position:0 0,0 0,0 0,55% 25%;
     background-repeat:no-repeat;
